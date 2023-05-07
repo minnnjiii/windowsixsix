@@ -39,30 +39,6 @@
     
     <body>
 
-        <form>
-            <div width = "300px">
-                아이디와 비밀번호를 입력해주세요 <br>
-                id : <input name = "id" type="text" ><br>
-                pw: <input name="pw" type = "password"> 
-                <br>
-                <br>
-                <div>
-                    <input 로그인 type = "submit" >
-                    <a href = "http://www.handong.edu">로그인</a><br><br>
-
-                </div>
-                
-                <br>
-                <br>
-            </div>
-        
-        </form>
-        <div>
-            <button class = "outset" type = "button" onclick = "alert(' A+')" > 클릭해주세용 </button>
-            <br>
-
-        </div>
-        
         <div>
             <br>
 
