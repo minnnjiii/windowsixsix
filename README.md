@@ -11,13 +11,6 @@
             height:150px;
             font-size: 50px;
         }
-
-        button.dotted {border-style: dotted;} <!--점선-->
-        button.dashed {border-style: dashed;} <!--대쉬선-->
-        button.solid {border-style: solid;} <!--진한선-->
-        button.double {border-style: double;} <!--선이 두 줄-->
-        button.inset {border-style: inset;} <!--들어가 있는 선-->
-        button.outset {border-style: outset;} <!--튀어 나와 있는 선-->
         
         div {
             overflow-x : auto;
