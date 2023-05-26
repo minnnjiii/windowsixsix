@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> 창문 개폐  </title>
+  <title> 창문 개폐 시스템  </title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -31,50 +31,25 @@
 </head>
 
 <body>
-    
-    <ul class="nav nav-pills" > 
-        <li role="presentation"><a href="#"> 로그인</a></li>
-        <li role="presentation"><a href="https://minnnjiii.github.io/windowsix/"> 회원가입 </a></li>
-        <li role="presentation"><a href="#"> 마이페이지 </a></li>
-    </ul>
-    <br> <!--줄바꿈-->
-    <br> <!--줄바꿈-->
-    <button id="btnClockwise"> 창문 열기 </button>
-    <button id="btnCounterclockwise"> 창문 닫기 </button>
 
+    <div>
+        <br>
+        
+        
+        <a href="172.20.10.2:80">
+        <button type = "button" onclick = "alert('창문이 열렸습니다!')" > 창문 열기 </button>
+        </a>
+        
+        <br>
+            <br>
+    </div>
+    <div>
+         <a href="172.20.10.2:80">
+        <button type = "button" onclick = "alert('창문이 닫혔습니다!')" > 창문 닫기 </button>
 
-  <script>
-    $(document).ready(function() {
-      $("#btnClockwise").click(function() {
-        $.ajax({
-          url: "/rotate",
-          method: "POST",
-          data: { direction: "clockwise" },
-          success: function(response) {
-            console.log("right.");
-          },
-          error: function(xhr, status, error) {
-            console.log("error:", error);
-          }
-        });
-      });
-
-      $("#btnCounterclockwise").click(function() {
-        $.ajax({
-          url: "/rotate",
-          method: "POST",
-          data: { direction: "counterclockwise" },
-          success: function(response) {
-            console.log("left.");
-          },
-          error: function(xhr, status, error) {
-            console.log("error:", error);
-          }
-        });
-      });
-
-      
-    });
-  </script>
-</body>
+    </div>
+    <br>
+            <br>
+   
+    </body>
 </html>
