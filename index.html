@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>스텝모터 제어</title>
+  <title>스텝모터 제ㅇ어</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
     $(document).ready(function() {
       $("#btnClockwise").click(function() {
         $.ajax({
-          url: "/rotate",
+          url: "http://172.20.10.9:8000/",
           method: "POST",
           data: { direction: "clockwise" },
           success: function(response) {
@@ -32,7 +32,7 @@
 
       $("#btnCounterclockwise").click(function() {
         $.ajax({
-          url: "/rotate",
+          url: "http://172.20.10.9:8000/",
           method: "POST",
           data: { direction: "counterclockwise" },
           success: function(response) {
@@ -46,7 +46,7 @@
 
       $("#btnStop").click(function() {
         $.ajax({
-          url: "/stop",
+          url: "http://172.20.10.9:8000/",
           method: "POST",
           success: function(response) {
             console.log("stop.");
