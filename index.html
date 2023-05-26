@@ -1,62 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>제발벶발;ㅣㅇㄴㄹㄴㅇ</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<title> 창문 개폐 시스템 </title>
+    <style>
+        button {
+            width:100%; 
+            min-width : 50px;
+            border:1px solid #444444;
+            height:150px;
+            font-size: 50px;
+        }
+
+        div {
+            overflow-x : auto;
+            
+        }
+
+
+        a{
+            background-color : skyblue;
+            font-size: 50;
+        }
+
+        
+           
+    </style>
 </head>
+
 <body>
-  <h1>stepmotor control</h1>
- 
-  <a href="http://172.20.10.2:80">
-  <button id="btnClockwise">clockwise</button>
-  </a>
-  <button id="btnCounterclockwise">counterclockwise</button>
-  <button id="btnStop">stop</button>
-    
 
-  <script>
-    $(document).ready(function() {
-      $("#btnClockwise").click(function() {
-        $.ajax({
-          url: "http://172.20.10.2/",
-          method: "POST",
-          data: { direction: "clockwise" },
-          success: function(response) {
-            console.log("right.");
-          },
-          error: function(xhr, status, error) {
-            console.log("error:", error);
-          }
-        });
-      });
+    <div>
+        <br>
+        
+        
+        <a href="172.20.10.2:80">
+        <button type = "button" onclick = "alert('창문이 열렸습니다!')" > 창문 열기 </button>
+        </a>
+        
+        <br>
+            <br>
+    </div>
+    <div>
+        <button type = "button" onclick = "alert('창문이 닫혔습니다!')" > 창문 닫기 </button>
 
-      $("#btnCounterclockwise").click(function() {
-        $.ajax({
-          url: "http://172.20.10.9:8000/",
-          method: "POST",
-          data: { direction: "counterclockwise" },
-          success: function(response) {
-            console.log("left.");
-          },
-          error: function(xhr, status, error) {
-            console.log("error:", error);
-          }
-        });
-      });
+    </div>
+    <br>
+            <br>
+    <div>
+        <button type = "button" onclick = "alert('통계입니다. ')" > 통계 </button>
 
-      $("#btnStop").click(function() {
-        $.ajax({
-          url: "http://172.20.10.9:8000/",
-          method: "POST",
-          success: function(response) {
-            console.log("stop.");
-          },
-          error: function(xhr, status, error) {
-            console.log("error:", error);
-          }
-        });
-      });
-    });
-  </script>
-</body>
+    </div>
+    </body>
 </html>
