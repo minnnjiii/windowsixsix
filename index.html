@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>스텝모터 제ㅇ어</title>
+  <title>제발벶발;ㅣㅇㄴㄹㄴㅇ</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <h1>stepmotor control</h1>
  
-  <a href="http://172.20.10.9">
+  <a href="http://172.20.10.2:80">
   <button id="btnClockwise">clockwise</button>
   </a>
   <button id="btnCounterclockwise">counterclockwise</button>
@@ -18,7 +18,7 @@
     $(document).ready(function() {
       $("#btnClockwise").click(function() {
         $.ajax({
-          url: "http://172.20.10.9:8000/",
+          url: "http://172.20.10.2/",
           method: "POST",
           data: { direction: "clockwise" },
           success: function(response) {
