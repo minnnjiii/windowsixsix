@@ -1,50 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+  <title> 창문 개폐  </title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <style>
+    button {
+        width:100%; 
+        min-width : 50px;
+        border:1px solid #444444;
+        height:150px;
+        font-size: 50px;
+    }
 
-
-<title> minji </title>
-    <style>
-        button {
-            width:100%; 
-            min-width : 50px;
-            border:1px solid #444444;
-            height:150px;
-            font-size: 50px;
-        }
-
-        div {
-            overflow-x : auto;
-            
-        }
-
+    div {
+        overflow-x : auto;
         
-           
+    }
+    a{
+        background-color : #99ccff;
+        font-size: 50;
+    }
+    ul{
+        background-color:  #99ccff;
+    }
     </style>
 </head>
 
 <body>
+    
+    <ul class="nav nav-pills" > 
+        <li role="presentation"><a href="#"> 로그인</a></li>
+        <li role="presentation"><a href="https://minnnjiii.github.io/windowsix/"> 회원가입 </a></li>
+        <li role="presentation"><a href="#"> 마이페이지 </a></li>
+    </ul>
+    <br> <!--줄바꿈-->
+    <br> <!--줄바꿈-->
+    <button id="btnClockwise"> 창문 열기 </button>
+    <button id="btnCounterclockwise"> 창문 닫기 </button>
 
-    <div>
-        <br>
-        
-        
-        <a href="http://172.20.10.2/">
-        <button type = "button" onclick = "alert('창문이 열렸습니다!')" > 창문 열기 </button>
-        </a>
-        
-        <br>
-            <br>
-    </div>
-    <div>
 
-        <button type = "button" onclick = "alert('창문이 닫혔습니다!')" > 창문 닫기 </button>
+  <script>
+    $(document).ready(function() {
+      $("#btnClockwise").click(function() {
+        $.ajax({
+          url: "/rotate",
+          method: "POST",
+          data: { direction: "clockwise" },
+          success: function(response) {
+            console.log("right.");
+          },
+          error: function(xhr, status, error) {
+            console.log("error:", error);
+          }
+        });
+      });
 
-    </div>
-    <br>
-            <br>
-    <div>
-        <button type = "button" onclick = "alert('통계입니다. ')" > 통계 </button>
+      $("#btnCounterclockwise").click(function() {
+        $.ajax({
+          url: "/rotate",
+          method: "POST",
+          data: { direction: "counterclockwise" },
+          success: function(response) {
+            console.log("left.");
+          },
+          error: function(xhr, status, error) {
+            console.log("error:", error);
+          }
+        });
+      });
 
-    </div>
-    </body>
+      
+    });
+  </script>
+</body>
 </html>
