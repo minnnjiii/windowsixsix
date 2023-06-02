@@ -1,63 +1,37 @@
+<!-- 글을 발행해주는 페이지 -->
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> login page </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script src="https://github.com/minnnjiii/windowsixsix/blob/main/server18.js"></script>
-    <style>
-        ul{
-            background-color:  #99ccff;
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <title> login page</title>
+</head>
+<body>
 
-        div {
-            overflow-x : auto;
-            
-        }
 
-        a{
-            background-color : #99ccff;
-            font-size: 50;
-        }
-    </style>
+  
+  <%- include('nav.html') %>
 
-    </head>
+  <div class="container mt-4"> 
+    <form action="/login" method="POST"> 
+      <div class="form-group"> 
+        <label>아이디</label> 
+        <input type="text" class="form-control" name="id"> 
+      </div> 
+      <div class="form-group"> 
+        <label>비번</label> 
+        <input type="text" class="form-control" name="pw"> 
+      </div> 
+      <button type="submit" class="btn btn-danger">로그인</button> 
+    </form> 
+  </div> 
 
-    <body>
-    
-    <ul class="nav nav-pills" >
-        <li role="presentation"><a href="https://minnnjiii.github.io/windowsixsix/"> 로그인</a></li>
-        <li role="presentation"><a href="https://minnnjiii.github.io/windowsix/"> 회원가입 </a></li>
-        <li role="presentation"><a href="메롱메롱"> 마이페이지 </a></li>
-      </ul>
-    <br> <!--줄바꿈-->
-    <br>
-    <br>
-    
-    <form class="form-inline" action="/add" method="POST">
-        <div class = "form-group">
-            <label for="exampleInputName2">아이디&nbsp&nbsp&nbsp&nbsp</label>
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="아이디를 입력하세요" name = "아이디">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputEmail2">비밀번호</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호를 입력하세요" name = "비밀번호">
-        </div>
-        <!--<button type="submit" class="btn btn-default">로그인</button>-->
-        <br>
-        <br>
-        <br>
-        <br>
 
-        
-        <a href = "http://172.20.10.2/" font-size: 100;>
-           로그인
-        </a>
-        
-    </form>
-    
-    </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 </html>
